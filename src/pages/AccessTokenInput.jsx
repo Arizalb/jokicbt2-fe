@@ -50,7 +50,9 @@ const AccessTokenInput = () => {
 
     try {
       // Ganti URL API sesuai dengan rute backend yang ada
-      const response = await axios.get(`/api/questions/${code}`);
+      const response = await axios.get(
+        `http://localhost:5000/api/questions/${code}`
+      );
 
       // Simpan kode ke localStorage jika diperlukan
       localStorage.setItem("code", code);

@@ -7,8 +7,8 @@ const theme = createTheme({
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "#5c6bc0", // Hijau lembu
-      contrastText: "#ffffff",
+      main: "#E2EAF4", // Hijau lembu
+      contrastText: "#060270",
     },
   },
   typography: {
