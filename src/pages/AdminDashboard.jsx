@@ -38,9 +38,12 @@ const AdminDashboard = () => {
   const fetchUsers = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get("http://localhost:5000/api/users/all", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await axios.get(
+        "https://jokicbt2.vercel.app/api/users/all",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setUsers(response.data.users || []);
     } catch (error) {
       console.error("Error fetching users", error);
@@ -51,7 +54,7 @@ const AdminDashboard = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/questions/all",
+        "https://jokicbt2.vercel.app/api/questions/all",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -74,7 +77,7 @@ const AdminDashboard = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://jokicbt2.vercel.app/api/auth/register",
         newUser,
         {
           headers: {
@@ -121,7 +124,7 @@ const AdminDashboard = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/api/users/${id}`, {
+        await axios.delete(`https://jokicbt2.vercel.app/api/users/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -193,7 +196,7 @@ const AdminDashboard = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/questions/create",
+        "https://jokicbt2.vercel.app/api/questions/create",
         questionData,
         {
           headers: {
@@ -231,9 +234,12 @@ const AdminDashboard = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/api/questions/${code}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.delete(
+          `https://jokicbt2.vercel.app/api/questions/${code}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         Swal.fire("Success", "Question deleted successfully", "success");
         setQuestions((prevUsers) =>
           prevUsers.filter((question) => question.code !== code)

@@ -83,7 +83,7 @@ const Test = () => {
       const code = localStorage.getItem("code"); // Get the code from localStorage
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/questions/${code}`, // Use the code in the URL
+          `https://jokicbt2.vercel.app/api/questions/${code}`, // Use the code in the URL
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -196,7 +196,7 @@ const Test = () => {
       setSubmitting(true);
 
       const response = await axios.post(
-        "http://localhost:5000/api/results/submit-answer",
+        "https://jokicbt2.vercel.app/api/results/submit-answer",
         payload,
         {
           headers: {

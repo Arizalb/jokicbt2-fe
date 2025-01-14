@@ -59,7 +59,7 @@ const Profile = () => {
 
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/users/profile",
+          "https://jokicbt2.vercel.app/api/users/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,

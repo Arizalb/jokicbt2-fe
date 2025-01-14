@@ -51,7 +51,7 @@ const AccessTokenInput = () => {
     try {
       // Ganti URL API sesuai dengan rute backend yang ada
       const response = await axios.get(
-        `http://localhost:5000/api/questions/${code}`
+        `https://jokicbt2.vercel.app/api/questions/${code}`
       );
 
       // Simpan kode ke localStorage jika diperlukan
